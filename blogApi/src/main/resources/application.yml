@@ -1,0 +1,9 @@
+server:
+  port: 7788
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://43.140.215.108/sg_blog
+      username: root
+      password: "123456"
