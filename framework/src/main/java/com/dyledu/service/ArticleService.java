@@ -9,5 +9,7 @@ public interface ArticleService extends IService<Article>{
 
     ResponseResult getArticleById(String id);
 
-    ResponseResult getArticleList();
+    ResponseResult getArticleList(Integer pageNum, Integer pageSize, Long categoryId);
+
+    ResponseResult updateViewCount(String id);
 }
