@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dyledu.mapper.RoleMapper">
+    <!--    查询用户 对应的角色-->
+    <select id="selectRoleByUserID" resultType="com.dyledu.domain.entity.Role">
+           SELECT * FROM `sys_user_role` WHERE `user_id` = #{id}
+    </select>
+</mapper>

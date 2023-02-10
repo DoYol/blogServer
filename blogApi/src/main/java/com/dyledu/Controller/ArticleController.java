@@ -5,6 +5,8 @@ import com.dyledu.annotation.SystemLog;
 import com.dyledu.domain.ResponseResult;
 import com.dyledu.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,8 @@ public class ArticleController {
      * 获取热度为前十的文章列表
      * @return
      */
+    @RequiresRoles("admin")
+    @RequiresPermissions("一级权限")
     @GetMapping("/hotArticleList")
     @SystemLog(businessName = "获取热度为前十的文章列表")
     public ResponseResult hotArticleList() {

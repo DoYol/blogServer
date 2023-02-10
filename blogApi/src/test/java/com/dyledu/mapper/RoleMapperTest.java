@@ -1,6 +1,5 @@
 package com.dyledu.mapper;
 
-import com.dyledu.domain.entity.Article;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +9,13 @@ import java.util.List;
 
 @SpringBootTest
 @Slf4j
-public class ArticleMapperTest {
+public class RoleMapperTest {
     @Autowired
-    private ArticleMapper articleMapper;
+    private RoleMapper roleMapper;
 
-    public void textArticleDatabase(){
-        List<Article> articles = articleMapper.selectList(null);
-        log.info(articles.toString());
+    @Test
+    public void textRoleID(){
+        List<String> list = roleMapper.selectRoleByUserID(1L);
+        log.info(list.toString());
     }
-
 }

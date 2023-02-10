@@ -25,6 +25,8 @@ spring:
         min-idle: 0
         #连接超时时间
     timeout: 10000
+  main:
+    allow-bean-definition-overriding: true
 mybatis-plus:
   configuration:
     #    在映射实体或者属性时，将数据库中表名和字段名的下划线去掉，按照驼峰命名法映射
@@ -37,3 +39,7 @@ mybatis-plus:
       logic-delete-field: delFlag
       logic-delete-value: 1
       logic-not-delete-value: 0
+  mapper-locations: classpath:com/*/mapper/*.xml
+#shiro密码迭代次数
+shiroIterations: 3
+shiroSalt: yunLong
