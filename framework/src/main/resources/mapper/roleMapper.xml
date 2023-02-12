@@ -4,7 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyledu.mapper.RoleMapper">
     <!--    查询用户 对应的角色-->
-    <select id="selectRoleByUserID" resultType="com.dyledu.domain.entity.Role">
-           SELECT * FROM `sys_user_role` WHERE `user_id` = #{id}
+    <select id="selectRoleByUserID" resultType="string">
+        SELECT role_key
+        FROM sg_blog.sys_role
+        WHERE id = (SELECT role_id FROM sg_blog.sys_user_role WHERE user_id = #{id})
     </select>
 </mapper>

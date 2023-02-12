@@ -39,7 +39,7 @@ mybatis-plus:
       logic-delete-field: delFlag
       logic-delete-value: 1
       logic-not-delete-value: 0
-  mapper-locations: classpath:com/*/mapper/*.xml
+  mapper-locations: classpath:/mapper/*.xml
 #shiro密码迭代次数
 shiroIterations: 3
 shiroSalt: yunLong

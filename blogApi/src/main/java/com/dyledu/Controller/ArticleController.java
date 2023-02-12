@@ -25,7 +25,7 @@ public class ArticleController {
      * @return
      */
     @RequiresRoles("admin")
-    @RequiresPermissions("一级权限")
+//    @RequiresPermissions("一级权限")
     @GetMapping("/hotArticleList")
     @SystemLog(businessName = "获取热度为前十的文章列表")
     public ResponseResult hotArticleList() {

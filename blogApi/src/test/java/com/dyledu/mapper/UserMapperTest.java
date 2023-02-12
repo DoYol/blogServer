@@ -14,8 +14,8 @@ public class UserMapperTest {
 
     @Test
     public void testUserMapperXml(){
-        Long id=1L;
-        User user = userMapper.selectByIdTest(id);
+        User user = userMapper.selectTest();
         log.info(user.toString());
+
     }
 }

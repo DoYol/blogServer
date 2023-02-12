@@ -35,7 +35,10 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UnauthenticatedException.class)
     public ResponseResult ShiroUnauthenticatedExceptionHandler(UnauthenticatedException e){
-        log.info("[TOKEN] token失效 Unauthorized");
+//        if(e.getMessage().equals("tokenError")){
+//            return ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN, "[TOKEN] token失效 Unauthorized");
+//        }
+//        return ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN, "Need Login");
         return ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN, "[TOKEN] token失效 Unauthorized");
     }
 

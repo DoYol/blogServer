@@ -15,7 +15,7 @@ public class RoleMapperTest {
 
     @Test
     public void textRoleID(){
-        List<String> list = roleMapper.selectRoleByUserID(1L);
-        log.info(list.toString());
+        String role = roleMapper.selectRoleByUserID(1L);
+        log.info(role);
     }
 }
