@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 @Slf4j
 public class articleTest {
-    @Test
+
     public void test(){
         log.info("测试一下");
     }

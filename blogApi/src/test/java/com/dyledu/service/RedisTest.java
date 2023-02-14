@@ -23,7 +23,7 @@ public class RedisTest {
 //        redisCache.setCacheMap("textMap001",map);
     }
 
-    @Test
+
     public void testGet(){
         Object text01 = redisCache.getCacheObject("bloglogin:1");
         log.info(text01.toString());

@@ -24,8 +24,6 @@ public class ArticleController {
      * 获取热度为前十的文章列表
      * @return
      */
-    @RequiresRoles("admin")
-//    @RequiresPermissions("一级权限")
     @GetMapping("/hotArticleList")
     @SystemLog(businessName = "获取热度为前十的文章列表")
     public ResponseResult hotArticleList() {
@@ -43,6 +41,7 @@ public class ArticleController {
         return articleService.getArticleById(id);
     }
 
+//    增加文章浏览量
     @GetMapping("/updateViewCount/{id}")
     public ResponseResult updateViewCount(@PathVariable String id){
         return articleService.updateViewCount(id);

@@ -1,5 +1,6 @@
 package com.dyledu.Controller;
 
+import com.dyledu.annotation.SystemLog;
 import com.dyledu.domain.ResponseResult;
 import com.dyledu.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @GetMapping("/getCategoryList")
+    @SystemLog(businessName = "获取分类列表")
     public ResponseResult getCategoryList(){
         return categoryService.getCategoryList();
     }

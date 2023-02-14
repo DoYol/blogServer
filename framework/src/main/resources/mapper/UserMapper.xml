@@ -7,4 +7,9 @@
     <select id="selectTest" resultType="com.dyledu.domain.entity.User">
         SELECT * FROM sys_user WHERE id=1;
     </select>
+
+<!--  selectIDByUserName  -->
+    <select id="selectIdByUserName" resultType="Long">
+        SELECT id FROM sys_user WHERE user_name=#{userName};
+    </select>
 </mapper>

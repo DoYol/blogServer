@@ -6,4 +6,6 @@ import com.dyledu.domain.entity.Comment;
 
 public interface CommentService extends IService<Comment> {
     ResponseResult getCommentList(Long articleId, int pageNum, int pageSize);
+
+    ResponseResult addComment(Comment comment);
 }

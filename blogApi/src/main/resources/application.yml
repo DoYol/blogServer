@@ -43,3 +43,10 @@ mybatis-plus:
 #shiro密码迭代次数
 shiroIterations: 3
 shiroSalt: yunLong
+
+oss:
+  accessKey: "PjBoF-nla7ahmmvYgtr8Rjyduy8knOidMiiTZCD0"
+  secretKey: "3iq_XBdV1YdfJE867I8s-TdtKhKEmcNcNwxW4M29"
+  bucket: "blog-images5"
+#  basePath: C:\Users\lijun.chen\Desktop\imgs\2023\
+  basePath: /usr/blog/imgs/

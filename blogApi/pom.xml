@@ -8,7 +8,7 @@
         <artifactId>myblog</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
+    <packaging>jar</packaging>
     <artifactId>blogApi</artifactId>
 
     <properties>
@@ -24,4 +24,24 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <!--重要，一定要配置，不然会出现找不到清单文件-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.dyledu.BlogApp</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

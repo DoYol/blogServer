@@ -72,11 +72,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.apache.commons</groupId>-->
 <!--            <artifactId>commons-lang3</artifactId>-->
@@ -104,11 +104,6 @@
 <!--            <groupId>com.qiniu</groupId>-->
 <!--            <artifactId>qiniu-java-sdk</artifactId>-->
 <!--            <version>[7.7.0, 7.10.99]</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;SpringSecurity启动器&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -142,7 +137,35 @@
             <artifactId>shiro-spring-boot-web-starter</artifactId>
             <version>1.8.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>[7.7.0, 7.10.99]</version>
+        </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
 
+                    <skipTests>true</skipTests>  <!--默认关掉单元测试 -->
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

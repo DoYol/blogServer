@@ -9,4 +9,6 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper extends BaseMapper<User> {
 
     User selectTest();
+
+    Long selectIdByUserName(String userName);
 }

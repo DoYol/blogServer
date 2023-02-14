@@ -55,6 +55,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
         return ResponseResult.okResult(commentPageVo);
     }
 
+
     /**
      * 获取评论数据的评论人昵称和被评论人昵称
      * @param commentList
@@ -72,5 +73,16 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
             return item;
         }).collect(Collectors.toList());
         return commentVoLists;
+    }
+
+    /**
+     * 添加评论
+     * @param comment
+     * @return
+     */
+    @Override
+    public ResponseResult addComment(Comment comment) {
+        this.save(comment);
+        return ResponseResult.okResult();
     }
 }

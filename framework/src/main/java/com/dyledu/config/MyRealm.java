@@ -5,10 +5,7 @@ import com.dyledu.constans.SystemConstants;
 import com.dyledu.domain.ResponseResult;
 import com.dyledu.enums.AppHttpCodeEnum;
 import com.dyledu.mapper.RoleMapper;
-import com.dyledu.utils.JwtToken;
-import com.dyledu.utils.JwtUtil;
-import com.dyledu.utils.RedisCache;
-import com.dyledu.utils.WebUtils;
+import com.dyledu.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -80,6 +77,7 @@ public class MyRealm extends AuthorizingRealm {
         if (userInfo == null) {
             throw new UnauthenticatedException("tokenError");
         }
+        UserThreadLocal.set(userToken);
         return new SimpleAuthenticationInfo(jwt, jwt, "MyRealm");
     }
 }

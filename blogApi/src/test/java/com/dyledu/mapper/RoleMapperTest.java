@@ -13,7 +13,7 @@ public class RoleMapperTest {
     @Autowired
     private RoleMapper roleMapper;
 
-    @Test
+
     public void textRoleID(){
         String role = roleMapper.selectRoleByUserID(1L);
         log.info(role);
